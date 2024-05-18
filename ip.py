@@ -1,23 +1,15 @@
-#from curses import window
-from email.headerregistry import Address
 from time import sleep
 from webbrowser import get
 from pyfiglet import Figlet
 import requests
 from colorama import Fore, Back, Style
 from tqdm import tqdm
-import random
 import pyshorteners
-from rich import syntax
-from rich.console import Console	
 import folium 
 #from tkinter import *
 import pyautogui
 import keyboard
 import socket
-#import rofi_menu
-#from cursesmenu import *
-#from cursesmenu.items import *
 import webbrowser
 import pandas
 
@@ -91,9 +83,6 @@ def main():
 	print(font_text.renderText('IP INFO'))
 	sleep(0.05)
 # delay 0.05, 0.01
-
-
-console = Console()
 
 
 if __name__ == '__main__':
