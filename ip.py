@@ -22,13 +22,6 @@ import webbrowser
 import pandas
 
 
-state_geo = requests.get(
-    "https://raw.githubusercontent.com/python-visualization/folium-example-data/main/us_states.json"
-).json()
-state_data = pandas.read_csv(
-    "https://raw.githubusercontent.com/python-visualization/folium-example-data/main/us_unemployment_oct_2012.csv"
-)
-
 
 def get_info_by_ip(ip='127.0.0.1'):
 	try:
@@ -72,18 +65,6 @@ def get_info_by_ip(ip='127.0.0.1'):
 	).add_to(m)"""
 		m.save(f'{response.get("query")}_{response.get("city")}.html')
 
-		folium.Choropleth(
-    		geo_data=state_geo,
-    		name="Region Name",
-    		data=state_data,
-    		columns=["State", "Unemployment"],
-    		key_on="feature.id",
-    		fill_color="YlGn",
-    		fill_opacity=0.7,
-    		line_opacity=0.2,
-    		legend_name="Unemployment Rate (%)",
-	).add_to(m)
-
 
 	except requests.exceptions.ConnectionError:
 		print('[!] Please check your connection!')
@@ -107,7 +88,7 @@ def main():
 
 
 	font_text = Figlet(font='slant')
-	print(font_text.renderText('IP ADDRESS'))
+	print(font_text.renderText('IP INFO'))
 	sleep(0.05)
 # delay 0.05, 0.01
 
